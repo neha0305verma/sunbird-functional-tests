@@ -137,7 +137,6 @@ public class TestActionUtil {
 
         if (null != headers)
             requestActionBuilder = addHeaders(requestActionBuilder, headers);
-
         return requestActionBuilder.payload(new ClassPathResource(requestFilePath));
     }
 

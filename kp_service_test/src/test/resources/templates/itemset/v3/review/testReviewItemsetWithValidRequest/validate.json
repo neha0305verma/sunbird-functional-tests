@@ -1,0 +1,34 @@
+{
+  "id" : "api.itemset.read",
+  "ver" : "3.0",
+  "ts" : "@matchesDatePattern('yyyy-MM-dd')@",
+  "params" : {
+    "resmsgid" : "@ignore@",
+    "msgid" : null,
+    "err" : null,
+    "status" : "successful",
+    "errmsg" : null
+  },
+  "responseCode" : "OK",
+  "result" : {
+    "itemset" : {
+      "owner" : "KP",
+      "identifier" : "${itemsetId}",
+      "lastStatusChangedOn" : "@matchesDatePattern('yyyy-MM-dd')@",
+      "code" : "kp.test.itemset",
+      "consumerId" : "@ignore@",
+      "channel" : "channel-01",
+      "description" : "Test ItemSet Description",
+      "language" : [ "English" ],
+      "maxScore" :"@isNumber()@",
+      "type" : "materialised",
+      "languageCode" : [ "en" ],
+      "createdOn" : "@matchesDatePattern('yyyy-MM-dd')@",
+      "version" :"@isNumber()@",
+      "appId" : "@ignore@",
+      "name" : "Test ItemSet",
+      "lastUpdatedOn" : "@matchesDatePattern('yyyy-MM-dd')@",
+      "status" : "Review"
+    }
+  }
+}

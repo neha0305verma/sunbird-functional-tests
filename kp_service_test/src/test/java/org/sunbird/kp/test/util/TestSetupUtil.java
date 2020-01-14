@@ -39,7 +39,7 @@ public class TestSetupUtil {
                         requestFile.createNewFile();
                     if (!validateFile.exists())
                         validateFile.createNewFile();
-                    populateDataIntoValidateFiles(mainDir, dir, validationFileName, dirIdMap.get(dir));
+                    populateDataIntoValidateFiles(mainDir, dir, validationFileName, dirIdMap.get(dir),templateDir);
                 } catch (Exception e) {
                     e.printStackTrace();
                     System.out.println("No files are created");
@@ -48,12 +48,25 @@ public class TestSetupUtil {
         });
     }
 
-    private static void populateDataIntoValidateFiles(String mainDir, String directoryPath, String fileName, String contentId ) {
+    private static void populateDataIntoValidateFiles(String mainDir, String directoryPath, String fileName, String contentId, String templateDir) {
         File file = new File(mainDir + "/" + directoryPath);
         if (file.isDirectory()) {
             try {
                 FileWriter fileWriter = new FileWriter(file.getPath() + "/" + fileName);
-                HttpResponse<String> jsonNode = Unirest.get(AppConfig.config.getString("kp_base_uri") + "/content/v3/read/" + contentId + "").asString();
+                String[] template = templateDir.split("/",4);
+                String baseUri = null;
+                String readUrl = null;
+                switch(template[1]){
+                    case "content" : {
+                        baseUri = "kp_base_uri";
+                        readUrl = "/content/v3/read/";
+                    }
+                    case "itemset" : {
+                        baseUri = "kp_assessment_service_base_uri";
+                        readUrl = "/itemset/v3/read/";
+                    }
+                }
+                HttpResponse<String> jsonNode = Unirest.get(AppConfig.config.getString(baseUri) + readUrl + contentId + "").asString();
                 Response response = objectMapper.readValue(jsonNode.getBody(), Response.class);
                 fileWriter.write(formGeneralAssertions(response));
                 fileWriter.close();

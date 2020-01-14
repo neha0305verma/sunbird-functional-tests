@@ -49,4 +49,11 @@ public class EndPointConfig {
                 .build();
     }
 
+    @Bean
+    public HttpClient kpAssessmentServiceClient() {
+        return CitrusEndpoints.http()
+                .client()
+                .requestUrl(AppConfig.config.getString("kp_assessment_service_base_uri"))
+                .build();
+    }
 }

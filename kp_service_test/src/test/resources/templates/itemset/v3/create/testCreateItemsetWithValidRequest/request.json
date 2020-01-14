@@ -1,0 +1,15 @@
+{
+        "request": {
+        "itemset": {
+        "identifier":"${itemsetId}",
+        "code": "kp.test.itemset",
+        "name": "Test ItemSet",
+        "description": "Test ItemSet Description",
+        "language": [
+        "English"
+        ],
+        "maxScore": 10,
+        "owner": "KP"
+        }
+        }
+        }

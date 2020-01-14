@@ -35,6 +35,8 @@ public class BaseCitrusTestRunner extends TestNGCitrusTestRunner {
 
     private static List<String> CS_API_LIST = AppConfig.config.getStringList("cs_api_list");
 
+    private static List<String> AS_API_LIST = AppConfig.config.getStringList("as_api_list");
+
     public BaseCitrusTestRunner() {
     }
 
@@ -314,10 +316,15 @@ public class BaseCitrusTestRunner extends TestNGCitrusTestRunner {
         return m + new Random().nextInt(9 * m);
     }
 
-    public  String getEndPoint(String reqUrl) {
+    public String getEndPoint(String reqUrl) {
         String newReqUrl = reqUrl.replaceAll("KP[a-zA-Z_]+\\d+\\??[a-zA-Z&=,]*", "")
                 .replaceAll("do_\\d+\\??[a-zA-Z&=,]*", "");
-        return CS_API_LIST.contains(newReqUrl) ? Constant.KP_CONTENT_SERVICE_ENDPOINT : Constant.KP_ENDPOINT;
+        String[] serviceName = reqUrl.split("/",3);
+        switch (serviceName[1]) {
+            case "content": return CS_API_LIST.contains(newReqUrl) ? Constant.KP_CONTENT_SERVICE_ENDPOINT : Constant.KP_ENDPOINT;
+            case "itemset": return AS_API_LIST.contains(newReqUrl) ? Constant.KP_ASSESSMENT_SERVICE_ENDPOINT : Constant.KP_ENDPOINT;
+        }
+        return Constant.KP_ENDPOINT;
     }
 
 }

@@ -24,6 +24,7 @@ public class Constant {
     public static final String KP_SEARCH_SERVICE_ENDPOINT = "kpSearchServiceClient";
     public static final String KP_DIAL_SERVICE_ENDPOINT = "kpDIALServiceClient";
     public static final String KEYCLOAK_ENDPOINT = "keycloakTestClient";
+    public static final String KP_ASSESSMENT_SERVICE_ENDPOINT = "kpAssessmentServiceClient";
 
     // Request Constants
     public static final String MULTIPART_FILE_NAME = "file";

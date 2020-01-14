@@ -40,4 +40,12 @@ public class APIUrl {
     //System Update API
     public static final String SYSTEM_UPDATE = "/system/v3/content/update/";
 
+    //Itemset Api
+    public static final String CREATE_ITEMSET = "/itemset/v3/create";
+    public static final String UPDATE_ITEMSET = "/itemset/v3/update/";
+    public static final String READ_ITEMSET = "/itemset/v3/read/";
+    public static final String RETIRE_ITEMSET = "/itemset/v3/retire/";
+    public static final String REVIEW_ITEMSET = "/itemset/v3/review/";
+
+
 }

@@ -40,5 +40,11 @@ public class WorkflowConstants {
             "\"collectionUnitsResourcesInDraft\":[\"CreateResources\", \"Update\"]\n" +
             "}";
 
+    // Itemset
+    public static final String itemsetWorkFlows = "{\n" +
+            "\"itemsetInDraft\":[]\n" +
+
+            "}";
+
 }
 

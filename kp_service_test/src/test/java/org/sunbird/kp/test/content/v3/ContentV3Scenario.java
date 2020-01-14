@@ -463,5 +463,13 @@ public class ContentV3Scenario {
     public static final String TEST_UPDATE_HIERARCHY_WITH_MULTILEVEL_UNITS = "testUpdateHierarchyWithMultilevelUnitAnd1Resource";
     public static final String TEST_UPDATE_HIERARCHY_WITH_1UNIT_1COLLECTION = "testUpdateHierarchyWith1Unit1CollectionValidRequest";
 
+    //Itemset preview url
+    public static final String TEST_PUBLISH_CONTENT_WITH_ITEMSET_DONT_HAVE_QUESTIONS = "testCreateContentWithItemsetDontHaveQuestions";
+    public static final String TEST_PUBLISH_CONTENT_WITHOUT_ITEMSET = "testCreateContentWithoutitemset";
+    public static final String TEST_PUBLISH_CONTENT_WITH_RETIRED_ITEMSET = "testCreateContentWithRetiredItemset";
+    public static final String TEST_PUBLISH_CONTENT_WITH_ITEMSET_HAVE_QUESTIONS = "testCreateContentWithItemsetHaveQuestions";
+    public static final String TEST_PUBLISH_CONTENT_WITH_ITEMSET_HAVE_RETIRED_QUESTIONS = "testCreateContentWithItemsetHaveRetiredQuestions";
+    public static final String TEST_PUBLISH_CONTENT_WITH_ITEMSET_HAVE_RETIRED_AND_LIVE_QUESTIONS = "testCreateContentWithItemsetHaveRetiredAndLiveQuestions";
+
 }
 
